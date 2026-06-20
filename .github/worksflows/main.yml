@@ -1,0 +1,14 @@
+on:
+push:
+branches:["main"]
+jobs:
+build:
+runs-on:windows-latest
+steps:
+-name:checkout code
+uses:actions/checkout@v4
+-name:setup python
+uses:actions/setup-python@v5
+with:python-version:'3.12'
+-name:Run python File
+run:python app.py
